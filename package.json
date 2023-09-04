@@ -1,0 +1,17 @@
+{
+  "name": "smart-git-tag",
+  "version": "1.0.0",
+  "description": "smart git tag",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "smart-tag": "./bin/index.js"
+  },
+  "author": "zwh",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.0.0"
+  }
+}
