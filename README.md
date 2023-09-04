@@ -1,0 +1,2 @@
+# smart-tag
+auto tag ++
