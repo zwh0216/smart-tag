@@ -1,0 +1,8 @@
+{
+  "semi": false, // 结尾不需要分号
+  "singleQuote": true,  // 使用单引号
+  "printWidth": 120,  // 需要换行的字符长度
+  "trailingComma": "none", 
+  "tabWidth": 2, // 缩进空格数
+  "bracketSpacing": true // 花括号前后添加空格
+}

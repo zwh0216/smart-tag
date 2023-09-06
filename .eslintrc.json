@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "commonjs": true,
+        "es2021": true
+    },
+    "extends": "google",
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules": {
+        "indent": ["off", 2],
+        "semi":"off",
+        "comma-dangle":"off",
+        "object-curly-spacing":"off"
+    }
+}

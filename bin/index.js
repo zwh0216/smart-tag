@@ -1,8 +1,14 @@
 #!/usr/bin/env node
 
-const Commander = require('commander')
+const { Command } = require('commander')
 const { autoTag } = require('../scripts/')
 
-const commander = new Commander.Command()
+const commander = new Command()
 
-commander.version('0.0.1', '-v, --version').option('-p, --production', 'tag auto ++', autoTag).parse(process.argv);
+commander
+  .version('0.0.1', '-v, --version')
+  .option('-p, --production', 'tag auto ++')
+  .option('-sp, --save-production', 'tag auto ++ and save tag number')
+  .parse(process.argv)
+
+autoTag(commander)

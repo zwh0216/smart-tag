@@ -1,12 +1,12 @@
-const { exec } = require('child_process');
+const { exec } = require('child_process')
 const getAllTags = (version) => {
   return new Promise((resolve, reject) => {
     exec(`git tag -l ${version}.*`, (err, stdout) => {
-      if(err){
+      if (err) {
         reject(err)
       }
 
-      if(stdout){
+      if (stdout) {
         resolve(stdout)
       }
     })

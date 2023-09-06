@@ -1,15 +1,18 @@
 const fs = require('fs')
 
-const getFileVersion = () => {
+const getFileVersion = ({ needSubVersion = false }) => {
   return new Promise((resolve, reject) => {
     const execPath = process.cwd()
     fs.readFile(`${execPath}/package.json`, 'utf-8', (err, data) => {
-      if(err){
+      if (err) {
         reject(err)
       }
-      if(data){
+      if (data) {
         const json = JSON.parse(data)
-        resolve(json.version)
+        resolve({
+          version: json.version,
+          subVersion: needSubVersion ? json.subVersion : void 0
+        })
       }
       resolve('')
     })
