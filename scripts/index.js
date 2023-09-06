@@ -1,12 +1,14 @@
-const { getFileVersion } = require('./getFileInfo')
-const { getAllTags } = require('./tags')
+const { getFileVersion } = require('./fileInfo')
+const { getMaxSubVersion } = require('./tags')
 
 const autoTag = async (commander) => {
   const options = commander.opts()
-  const { production } = options || {}
-  const version = await getFileVersion({ needSubVersion: production })
-  const tagList = await getAllTags(version)
-  console.log('tagList ->', tagList)
+  const { production, saveProduction } = options || {}
+  if (production || saveProduction) {
+    const { version } = await getFileVersion({ needSubVersion: saveProduction })
+    const maxSubVersion = await getMaxSubVersion(version)
+    console.log('maxSubVersion ->', maxSubVersion)
+  }
 }
 
 module.exports = {
