@@ -3,8 +3,7 @@ const { getMaxSubVersion, getNewTag, gitTag, pushTag } = require('./tags')
 
 const autoTag = async (commander) => {
   const options = commander.opts()
-  const { production, saveProduction, comment, test } = options || {}
-  console.log('test ->', test);
+  const { production, saveProduction, comment } = options || {}
   if (production || saveProduction) {
     const { version } = await getFileVersion({ needSubVersion: saveProduction })
     const maxSubVersion = await getMaxSubVersion(version)
