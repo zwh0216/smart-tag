@@ -7,14 +7,11 @@ const getFileVersion = ({ needSubVersion = false }) => {
       if (err) {
         reject(err)
       }
-      if (data) {
-        const json = JSON.parse(data)
-        resolve({
-          version: json.version,
-          subVersion: needSubVersion ? json.subVersion : void 0
-        })
-      }
-      resolve('')
+      const json = data ? JSON.parse(data) : { version: void 0, subVersion: void 0 }
+      resolve({
+        version: json.version,
+        subVersion: needSubVersion ? json.subVersion : void 0
+      })
     })
   })
 }

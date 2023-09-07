@@ -10,10 +10,12 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "indent": ["off", 2],
-        "semi":"off",
+        "indent": ["off", 2], // tab缩进两个空格
+        "semi":"off", // 关闭分号
         "comma-dangle":"off",
-        "object-curly-spacing":"off",
-        "valid-jsdoc": "off"
+        "object-curly-spacing":"off", // 对象的前后空格：{ object: true }
+        "valid-jsdoc": "off", // 
+        "max-len": ["error", { "code": 120 }], // 一行代码最长120字符
+        "operator-linebreak": ["error", "before"] // 字符放在行头
     }
 }
