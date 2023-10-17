@@ -1,6 +1,6 @@
 {
   "name": "smart-git-tag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "smart git tag",
   "main": "index.js",
   "scripts": {
