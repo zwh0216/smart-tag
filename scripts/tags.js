@@ -26,7 +26,7 @@ const getAllTags = (version) => {
  */
 const getMaxSubVersion = async (version) => {
   const tagStr = await getAllTags(version)
-  let maxNumber = 0
+  let maxNumber = -1
   if (!tagStr) return maxNumber
   const list = tagStr?.split('\n')
   for (const tag of list) {
